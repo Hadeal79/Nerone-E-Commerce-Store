@@ -1,0 +1,817 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap CSS -->
+    <link href ="images/neroneicon.png" rel="shortcut icon"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <title>Nerone-Webflow E-Commerce</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .nav-link.active {
+            color: rgb(220,90,40) !important
+        }
+        .nav-link {
+            color: #333;
+        }
+
+       .nav-link:hover {
+                color: rgb(220,90,40);
+       }
+        @media screen and (max-width:991px) {
+            .px {
+                padding: 15px 5px 15px 5px !important;
+            }
+        }
+
+
+            @font-face {
+            font-family: 'PlayfairDisplay-VariableFont_wght';
+            src: url('fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+        }
+
+        body {
+            background-color: rgb(250,250,250);
+            font-family: 'Playfair Display', serif;
+            font-size: large;
+        }
+
+        .dropdown-toggle::after {
+            content: none;
+        }
+
+        .mynav a {
+            margin-right: 30px;
+        }
+
+        @media screen and (min-width:1116px) {
+            .px {
+                padding: 25px 70px !important;
+            }
+        }
+
+        .dropdown-item {
+            display: block;
+            margin: 0px;
+            padding: 12px 20px;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-style: none none solid;
+            border-width: 1px;
+            border-color: #eee #eee #505050;
+            border-radius: 0px;
+            background-color: transparent;
+            box-shadow: 0 3px 5px -3px rgb(114 111 111 / 20%);
+            transition: background-color 400ms ease, color 400ms ease;
+            color: #fff;
+            font-size: 13px;
+            line-height: 23px;
+            text-align: left;
+        }
+
+        .dropdown-menu {
+            overflow: hidden;
+            width: auto;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: #3d3d3d;
+            box-shadow: 4px 4px 18px 0 rgb(46 50 60 / 9%);
+        }
+
+        .footnav a {
+            color: black;
+        }
+
+        .footnav ul {
+            border-top: solid 0.5px rgb(144,128,161);
+            border-bottom: solid 0.5px rgb(144,128,161);
+            padding-top: 0;
+            padding-bottom: 0;
+            max-width: 100%;
+            margin-top: 60px;
+        }
+
+        .cul a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .cul {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .iconsize i {
+            width: 30px;
+            text-align: center;
+        }
+
+        footer {
+            width: 100vw;
+            background-image: linear-gradient( 180deg, hsla(0, 0%, 100%, 0.86), hsla(0, 0%, 100%, 0.86)),url('images/nbig.png');
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center 10%;
+            background-size: auto 150px;
+            padding-top: 250px;
+            position: relative;
+        }
+
+        #absolute {
+            position: absolute;
+            top: 15%;
+            left: 43%;
+            font-size: 30px;
+            line-height: 40px;
+            letter-spacing: 12px;
+            color: black;
+        }
+
+        @media screen and (min-width:768px) {
+            .heroshop {
+                background-image: url('images/shopbackground.png'), linear-gradient( 180deg, hsla(0, 0%, 100%, 0.75), hsla(0, 0%, 100%, 0.75)), url('images/shopobs.jpg');
+                background-position: 100% 0%, 0px 0px, 50% 50%;
+                background-size: 500px, auto, cover;
+                background-repeat: no-repeat;
+                background-color: #f3f3f3;
+                opacity: 1;
+            }
+
+                .heroshop h1 {
+                    position: absolute;
+                    bottom: 30%;
+                    left: 5%;
+                    font-size: 48px;
+                }
+        }
+
+        @media screen and (max-width:767px) {
+            .heroshop {
+                opacity: 1;
+                background-image: url('images/shopobs.jpg');
+                background-size: cover;
+            }
+
+                .heroshop h1 {
+                    position: absolute;
+                    bottom: 30%;
+                    left: 40%;
+                    font-size: 48px;
+                }
+        }
+
+        @media screen and (min-width:480px) {
+            .btnborder {
+                border-top: 1px solid #eee;
+                border-right: 1px solid #eee;
+                width: 50%;
+                color: #666;
+            }
+
+            .btnbordert {
+                border-top: 1px solid #eee;
+                width: 50%;
+                color: #666;
+            }
+        }
+
+        @media screen and (max-width:479px) {
+            .btnborder {
+                border-top: 1px solid #eee;
+                color: #666;
+            }
+
+            .btnbordert {
+                border-top: 1px solid #eee;
+                color: #666;
+            }
+
+            
+
+            .colmange {
+                width: 100% !important;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            .btnborderth {
+                border-top: 1px solid #eee;
+                border-right: 1px solid #eee;
+                width: 50%;
+                color: #666;
+            }
+
+            .btnborderf {
+                border-top: 1px solid #eee;
+                width: 50%;
+                color: #666;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .btnborderth {
+                border-top: 1px solid #eee;
+                color: #666;
+            }
+
+            .btnborderf {
+                border-top: 1px solid #eee;
+                color: #666;
+                padding-bottom: 6px;
+            }
+
+            .divabc {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <div class="offcanvas offcanvas-end" tabindex="1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Your Cart</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+
+    </div>
+    <nav class="mynav px navbar navbar-expand-lg fixed-top  bg-white px-4 py-4" style="box-shadow: 0 1px 3px 0 rgb(0 0 0 / 6%);">
+
+        <a href="Home.html" class="navbar-brand">
+            <img src="images/brand.png" style="width:280px;max-width:100%;" />
+        </a>
+        <div class="order-md-last d-flex">
+            <button class="navbar-toggler ms-auto navbar-light" data-bs-toggle="collapse" data-bs-target="#mnav" style="border-color: rgba(0,0,0,0); font-size: .8rem;">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <button class="btn  d-flex align-items-center justify-content-between" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="width:110px;">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                Cart
+                <span class="badge bg-danger" style="border-radius:100%">0</span>
+
+            </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="mnav">
+            <ul class="navbar-nav">
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item"><a href="index.html" class="nav-link ">Home</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item dropdown">
+                    <a href="Pages.html" class="nav-link dropdown-toggle" id="navdropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <ul class="dropdown-menu" aria-labelledby="navDropdown">
+                        <li><a class="dropdown-item " href="#"> About Us</a></li>
+                        <li><a class="dropdown-item" href="#">Licensing</a></li>
+                        <li><a class="dropdown-item" href="#">Style Guide</a></li>
+                        <li><a class="dropdown-item" href="#">Password</a></li>
+                        <li><a class="dropdown-item" href="#">404</a></li>
+                        <li><a class="dropdown-item" href="#">Changelog</a></li>
+                    </ul>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item "><a href="Shop.html" class="nav-link active" aria-current="page">Shop</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item dropdown ">
+                    <a href="Collection.html" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Collections</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Best Seller</a></li>
+                        <li><a class="dropdown-item" href="#">Last Act</a></li>
+                        <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                        <li><a class="dropdown-item" href="#">Related prod</a></li>
+                        <li><a class="dropdown-item" href="#">Hot Products</a></li>
+                        <li><a class="dropdown-item" href="#">Sales Off</a></li>
+                    </ul>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item "><a href="Plog.html" class="nav-link">Blog</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item "><a href="Contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+
+
+
+
+    </nav> <!--header-->
+
+    <div style="height:400px;" class="heroshop d-flex position-relative flex-column">
+        <h1>Shop</h1>
+    </div>
+
+    <div class="container"style="padding:100px 20px;">
+        <div class="row row-cols-1 row-cols-lg-3 g-4">
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+                        <img src="images/simgcard1.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">Neck Massage Lotion</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            New Arrivals
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 135.00 USD
+                        </p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+
+                        <img src="images/imgcard3.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">Face Lotion</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Our Accessories
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 175.00 USD
+                        </p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+                        <img src="images/shoppro3.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Legs Lotion</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Our Accessories
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 135.00 USD
+                        </p>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+                        <img src="images/imgcard2.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Hair Creme</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Skin Care
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 125.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+                        <img src="images/product1.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">Hair Spray</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            New Arrivals
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 105.00 USD
+                        </p>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+                        <img src="images/product4.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">Hands Care Creme</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Skin Care
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 125.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+                        <img src="images/shoppro7.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">Body Oil</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Skin Care
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 165.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+                        <img src="images/product3.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">Lime Body Wash</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Make-Up Tools
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 365.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+                        <img src="images/imgcard5.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Hair Nutrition Balsam</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Our Accessories
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 265.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+
+                        <img src="images/imgcard6.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Body Lotion</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            New Arrivals
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 235.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+                        <img src="images/clas1.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+
+
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Gold Parfume</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Our Accessories
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 195.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+                        <img src="images/clas2.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">  Clear Makeup Creme</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Nail Polish
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 95.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+                        <img src="images/clas3.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Morning Creme</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Make-Up Tools
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 225.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+
+                        <img src="images/clas4.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Protection Creme</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Make-Up Tools
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 115.00 USD
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+                        <img src="images/clas5.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">Make Up Set</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Lip-sticks
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 165.00 USD
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+                        <img src="images/clas6.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;">Organic Lipstick</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Lip-sticks
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 125.00 USD
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+
+
+                        <img src="images/clas7.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Skin Care Creme</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Our Accessories
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 135.00 USD
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                <a href="#">
+                    <div class="p-3">
+
+
+
+
+                        <img src="images/clas8.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                    </div>
+                </a>
+                <div class="text-center pt-3">
+                    <a href="#" class="text-decoration-none text-black d-block" style="margin-bottom:15px;"> Nail Pro Color</a>
+
+                    <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                            Nail Polish
+                        </a>
+                        <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                            $ 155.00 USD
+                        </p>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+                    <div class="row mx-5 px-4 gy-3" style="padding: 120px 0px;">
+                        <div class="col-lg card p-0 me-4" style=" box-shadow: 0 15px 25px 0 rgb(82 91 115 / 8%);">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-center" style="padding:35px 0px 20px 0px;"><h4 class="fs-5">RETURNE POLICY</h4></li>
+                                <li class="list-group-item text-center" style="padding: 20px 0px 35px 0px; color: #d84811; ">100% money back guarantee</li>
+                            </ul>
+
+                        </div>
+
+
+
+
+                        <div class="col-lg card p-0 me-4" style="box-shadow: 0 15px 25px 0 rgb(82 91 115 / 8%);">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-center" style="padding:35px 0px 20px 0px;"><h4 class="fs-5">FREE SHIPPING</h4></li>
+                                <li class="list-group-item text-center" style="padding: 20px 0px 35px 0px; color: #d84811; ">free shipping ovrer 99$</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-lg card p-0" style="box-shadow: 0 15px 25px 0 rgb(82 91 115 / 8%);">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-center" style="padding:35px 0px 20px 0px;"><h4 class="fs-5">SUPPORT</h4></li>
+                                <li class="list-group-item text-center" style="padding: 20px 0px 35px 0px; color: #d84811; ">support all day 24/7</li>
+                            </ul>
+
+                        </div>
+
+                    </div> <!--abovefootershop-->
+
+                    <footer class="container-fluid ">
+                        <a href="Home.html"> <h2 id="absolute">NERONE</h2></a>
+                        <div class="input-group inb mb-3 w-50 mx-auto ">
+                            <input type="text" class="form-control rounded-0 p-2" placeholder="Enter Your Email Here" aria-label="Enter Your Email Here" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary w-50 rounded-0 p-2 lh-lg" type="button" id="button-addon2">SUBMIT NOW</button>
+                        </div>
+
+                        <nav class="navbar navbar-expand footnav">
+                            <ul class="navbar nav mx-auto">
+                                <li class="nav-item"><a href="#" class="nav-link mx-5">HOME</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link mx-5">PAGES</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link mx-5"> SHOP</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link mx-5">COLLECTION</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link mx-5">PLOG</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link mx-5">CONTACT</a></li>
+                            </ul>
+                        </nav>
+
+                        <p style="color:rgb(144,128,161)" class="cul">Template design by<a href="#"> Dorian Hoxha</a> - <a href="#">Image License Info</a>&<a href="#">Style-Guide</a>, Powered by <a href="#">Webflow</a></p>
+                        <div class="d-flex iconsize justify-content-center mt-5 pb-5">
+                            <a href="#"> <i class='bx bxl-facebook' style='color:rgba(0,0,0,0.56)'></i></a>
+                            <a href="#"> <i class='bx bxl-twitter' style='color:rgba(0,0,0,0.56)'></i></a>
+                            <a href="#"> <i class='bx bxl-linkedin' style='color:rgba(0,0,0,0.56)'></i></a>
+                            <a href="#"> <i class='bx bxl-google-plus' style='color:rgba(0,0,0,0.56);'></i></a>
+                        </div>
+                    </footer> <!--footer-->
+
+
+</body>
+</html>

@@ -1,0 +1,1336 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap CSS -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="images/neroneicon.png" rel="shortcut icon"/>
+    <title>Nerone-Webflow E-Commerce</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .nav-link.active {
+            color: rgb(220,90,40) !important
+        }
+        .nav-link{color:#333;}
+            .nav-link:hover {
+                color: rgb(220,90,40);
+        }
+        .nav-link:focus {
+                color: black;
+        }
+           
+        
+        .hov:hover {
+            color: rgb(220,90,40);
+        }
+        
+        .trans:hover{opacity:100% !important;}
+        @font-face {
+            font-family: 'PlayfairDisplay-VariableFont_wght';
+            src: url('fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+        }
+
+        body {
+            background-color: rgb(250,250,250);
+            font-family: 'Playfair Display', serif;
+            font-size: large;
+        }
+
+        .dropdown-toggle::after {
+            content: none;
+        }
+
+
+
+
+        @media screen and (max-width: 991px) {
+            .hero-section {
+                background-image: linear-gradient(180deg, hsla(0, 0%, 95.3%, 0.75), hsla(0, 0%, 95.3%, 0.75)),url('images/girl.jpg'), url('images/opacity.jpg');
+                height: auto;
+                min-height: 700px;
+                padding-top: 0px;
+                background-position: 0px 0px, 100% 100%, 50% 0px;
+                background-size: auto, cover, cover;
+                background-repeat: repeat, no-repeat, no-repeat;
+            }
+
+            .transform {
+                display: flex;
+                position: absolute;
+                top: 50%;
+                text-align: center;
+            }
+
+            .links {
+                margin: auto;
+            }
+            
+
+            .mar {
+                margin: auto;
+                text-align: center;
+            }
+            .px{padding:15px 5px 15px 5px !important;}
+        }
+
+        .lborder {
+            border-bottom: 1px solid rgb(220,90,40);
+        }
+            .lborder:hover {
+                border-bottom: 1px solid black;
+            }
+
+        @media screen and (min-width:991px) {
+            .hero-section {
+                background-image: url('images/girl.jpg');
+                height: 100vh;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 100% 0%;
+                background-color: white;
+                position: relative;
+                display: flex;
+            }
+
+            .herophoto {
+                background-image: url('images/up.png');
+                position: absolute;
+                display: flex;
+                height: 100vh;
+                width: 90vw;
+                background-size: auto 423px;
+                background-repeat: no-repeat;
+                background-position: 44% bottom;
+                left: 100px;
+            }
+
+            .herotarget {
+                background-image: url('images/scrolldown.svg');
+                background-size: 16px;
+                background-repeat: no-repeat;
+                height: 110px;
+                width: 20px;
+                display: block;
+                justify-content: end;
+                position: absolute;
+                bottom: 20px;
+            }
+        }
+
+        .shopn {
+            width: 145px;
+            height: 48px;
+            border-color: #d84811;
+            background-color: transparent;
+            color: #d84811;
+            font-size: 10px;
+        }
+            .shopn:hover {
+                color: white;
+                background-color: #d84811;
+            }
+        .mynav a {
+            margin-right: 30px;
+        }
+        /*.navbar {
+            flex-wrap: nowrap;
+        }*/
+
+        @media screen and (min-width:1116px) {
+            .px {
+                padding: 25px 70px !important;
+            }
+
+        }
+        
+        .dropdown-item {
+            display: block;
+            margin: 0px;
+            padding: 12px 10px 12px 10px;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-style: none none solid;
+            border-width: 1px;
+            border-color: #eee #eee #505050;
+            border-radius: 0px;
+            background-color: transparent;
+            box-shadow: 0 3px 5px -3px rgb(114 111 111 / 20%);
+            transition: background-color 400ms ease, color 400ms ease;
+            color: #fff;
+            font-size: 13px;
+            line-height: 23px;
+            text-align: left;
+        }
+
+        .dropdown-menu {
+            overflow: hidden;
+            min-width:80px;
+            flex-wrap: wrap;
+            background-color: #3d3d3d;
+            box-shadow: 4px 4px 18px 0 rgb(46 50 60 / 9%);
+        }
+
+
+        .footnav a {
+            color: black;
+        }
+
+        .footnav ul {
+            border-top: solid 0.5px rgb(144,128,161);
+            border-bottom: solid 0.5px rgb(144,128,161);
+            padding-top: 0;
+            padding-bottom: 0;
+            max-width: 100%;
+            margin-top: 60px;
+        }
+
+        .cul a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .cul {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .iconsize i {
+            width: 30px;
+            text-align: center;
+        }
+
+        footer {
+            width: 100vw;
+            background-image: linear-gradient( 180deg, hsla(0, 0%, 100%, 0.86), hsla(0, 0%, 100%, 0.86)),url('images/nbig.png');
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center 10%;
+            background-size: auto 150px;
+            padding-top: 250px;
+            position: relative;
+        }
+
+        #absolute {
+            position: absolute;
+            top: 15%;
+            left: 43%;
+            font-size: 30px;
+            line-height: 40px;
+            letter-spacing: 12px;
+            color: black;
+        }
+
+        #nback {
+            background-image: linear-gradient(180deg,hsla(0, 0%, 100%, 0.92),hsla(0, 0%, 100%, 0.92)),url('images/nbig.png');
+            background-color: white;
+            background-size: auto 300px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            height: 75vh;
+        }
+
+       
+
+        @media screen and (min-width:480px) {
+            .fcircle {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                background-color: rgba(255, 147, 63, 0.42);
+                border-radius: 100%;
+            }
+
+            .scircle {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                background-color: rgba(216, 72, 17, 0.41);
+                border-radius: 100%;
+            }
+            .prodone {
+                display: flex;
+                position: relative;
+                border: 16px solid #ff933f;
+                border-radius: 100%;
+                justify-content: center;
+                width: 460px;
+                height: 460px;
+            }
+            .prodthree {
+                display: flex;
+                position: relative;
+                justify-content: center;
+                width: 500px;
+                height: 500px;
+                border-radius: 100%;
+                background-color: rgba(255, 147, 63, 0.37);
+            }
+        }
+
+        .card-body h4 {
+            border-top: solid 1px #eee;
+            margin-bottom: 15px;
+            padding-top: 5px;
+            font-size: 16px;
+            line-height: 30px;
+            color: #666;
+        }
+
+        .card-title {
+            margin-bottom: 5px;
+        }
+
+        @media screen and (max-width:479px) {
+            .imedia {
+                display: block !important;
+                text-align: center;
+            }
+
+            .iimedia img {
+                margin: auto;
+            }
+            .prodone {
+                display: flex;
+                position: relative;
+                border: 16px solid #ff933f;
+                border-radius: 100%;
+                justify-content: center;
+                width: 228px;
+                height: 228px;
+            }
+            .prodthree {
+                display: flex;
+                position: relative;
+                justify-content: center;
+                width: 289px;
+                height: 289px;
+                border-radius: 100%;
+                background-color: rgba(255, 147, 63, 0.37);
+            }
+        }
+
+        .cardsh {
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px 0 rgb(82 91 115 / 12%);
+            border: none;
+        }
+
+        .awa {
+            color: #d84811;
+            font-size: 20px;
+            line-height: 30px;
+            font-style: normal;
+            text-decoration: none;
+        }
+            
+        .awan:hover {
+            color: black;
+            border-bottom: 1px black solid;
+        }
+        .awan {
+            letter-spacing: 1px;
+            padding: 3px 0px;
+            text-decoration: none;
+            color: black;
+            border-bottom: 1px #d84811 solid;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .pwa {
+            color: grey;
+            font-size: 15px;
+            line-height: 25px;
+            text-align: left;
+        }
+
+        .hwa {
+            font-size: 48px;
+            line-height: 58px;
+            font-weight: 400;
+        }
+
+        @media screen and (max-width:479px) {
+            .tired {
+                display: block;
+            }
+        }
+
+        
+
+        .carouselimg {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-image: url('images/fcarousel.jpg');
+            background-position: 50% 50%;
+            background-size: 200px;
+            margin: auto;
+        }
+
+        .carouselbody {
+            max-width: 570px;
+            font-family: 'Playfair Display', sans-serif;
+            font-size: 22px;
+            line-height: 40px;
+            font-style: normal;
+            font-weight: 400;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .carospan {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .carouselimgt {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-image: url('images/scarousel.jpg');
+            background-size: cover;
+            background-position: 72% 0%;
+            margin: auto;
+        }
+
+        @media screen and (min-width:768px) {
+            .bordera {
+                border-right: 1px solid #ebebeb;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .bordera {
+                border-bottom: 1px solid #ebebeb;
+            }
+        }
+
+        #letsget {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 147, 63, 0.88)), to(rgba(255, 147, 63, 0.88))),url('images/letsget.png');
+            background-position: 0% 0% 50% 50%;
+            background-repeat: repeat no-repeat;
+            height: 326px;
+            background-size: auto,500px;
+            padding: 104px 0px 88px 0px;
+            text-decoration: none;
+        }
+
+        .lgdiv {
+            color: hsla(0, 0%, 100%, 0.7);
+            margin-bottom: 10px;
+        }
+
+        .lgh {
+            font-weight: 400;
+            font-size: 34px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .lgp {
+            display: inline-block;
+            padding: 3px 0px;
+            border-bottom: 1px solid white;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            opacity:65%;
+        }
+        .lgb:hover {
+            opacity:100%;
+        }
+        #learnmore {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-image: linear-gradient( 180deg, rgba(216, 72, 17, 0.88), rgba(216, 72, 17, 0.88)), url('images/learnmore.png');
+            background-color: #d84811;
+            background-repeat: repeat no-repeat;
+            height: 326px;
+            background-size: auto,500px;
+            padding: 104px 0px 88px 0px;
+            text-decoration: none;
+        }
+        .hovb{color:black;}
+            .hovb:hover {
+                color: rgb(220,90,40);
+            }
+        @media screen and (min-width:480px) {
+            .btnborder {
+                border-top: 1px solid #eee;
+                border-right: 1px solid #eee;
+                width: 50%;
+                color: #666;
+            }
+
+            .btnbordert {
+                border-top: 1px solid #eee;
+                width: 50%;
+                color: #666;
+            }
+            .chance {
+                width: 400px;
+                height: 600px;
+            }
+        }
+
+        @media screen and (max-width:479px) {
+            .chance{
+                width:90%;
+                height:150%;
+            }
+            .divab{
+                display:block !important;
+            }
+            .btnborder {
+                border-top: 1px solid #eee;
+                color: #666;
+                
+            }
+
+            .btnbordert {
+                border-top: 1px solid #eee;
+                color: #666;
+                
+               
+            }
+
+           
+            .colmange {
+                width: 100% !important;
+            }
+        }
+
+        @media screen and (min-width:768px) {
+            .btnborderth {
+                border-top: 1px solid #eee;
+                border-right: 1px solid #eee;
+                width: 50%;
+                color: #666;
+            }
+
+            .btnborderf {
+                border-top: 1px solid #eee;
+                width: 50%;
+                color: #666;
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            .btnborderth {
+                border-top: 1px solid #eee;
+                color: #666;
+            }
+
+            .btnborderf {
+                border-top: 1px solid #eee;
+                color: #666;
+                padding-bottom: 6px;
+            }
+
+            .divabc {
+                display: block !important;
+            }
+            .phfo{display:block;}
+        }
+        .best {
+            color: #000;
+            font-size: 48px;
+            line-height: 58px;
+            font-weight: 400;
+            text-align: center;
+        }
+        .beut {
+            color: #d84811;
+            font-size: 20px;
+            line-height: 30px;
+            font-style: normal;
+            text-align: center;
+           
+        }
+        .sec{color:#948d8d;}
+        .sec:hover{color:black;}
+         </style>
+
+</head>
+<body>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <div class="offcanvas offcanvas-end" tabindex="1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header" style="border-bottom: solid 1px #e6e6e6;">
+            <h5 id="offcanvasRightLabel">Your Cart</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         </div>
+        <div class="offcanvas-body">
+            <p style="padding: 50% 0% 50% 30%; color: #505050;line-height:24px; ">No items found.</p>
+        </div>
+    </div>
+    <nav class="mynav px navbar navbar-expand-lg fixed-top  bg-white p-4" style="box-shadow: 0 1px 3px 0 rgb(0 0 0 / 6%);">
+
+        <a href="index.html" class="navbar-brand">
+            <img src="images/brand.png" style="width:280px;max-width:100%;" />
+        </a>
+
+        <div class="collapse navbar-collapse order-lg-0 justify-content-end" id="mnav">
+            <ul class="navbar-nav">
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navdropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <ul class=" dropdown-menu" aria-labelledby="navDropdown">
+                        <li><a class="dropdown-item " href="#"> About Us</a></li>
+                        <li><a class="dropdown-item" href="#">Licensing</a></li>
+                        <li><a class="dropdown-item" href="#">Style Guide</a></li>
+                        <li><a class="dropdown-item" href="#">Password</a></li>
+                        <li><a class="dropdown-item" href="#">404</a></li>
+                        <li><a class="dropdown-item" href="#">Changelog</a></li>
+                    </ul>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item "><a href="Shop.html" class="nav-link">Shop</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item dropdown ">
+                    <a href="Collection.html" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Collections</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Best Seller</a></li>
+                        <li><a class="dropdown-item" href="#">Last Act</a></li>
+                        <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                        <li><a class="dropdown-item" href="#">Related prod</a></li>
+                        <li><a class="dropdown-item" href="#">Hot Products</a></li>
+                        <li><a class="dropdown-item" href="#">Sales Off</a></li>
+                    </ul>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item "><a href="Plog.html" class="nav-link">Blog</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item "><a href="Contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="d-flex flex-nowrap">
+            <button class="navbar-toggler ms-auto navbar-light" data-bs-toggle="collapse" data-bs-target="#mnav" style="border-color: rgba(0,0,0,0); font-size: .8rem;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <button class=" border-0 bg-white opacity-75 trans d-flex align-items-center justify-content-between " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="width:110px;">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <span class="hov">Cart</span>
+                <span class="badge bg-danger" style="border-radius:100%">0</span>
+
+            </button>
+        </div>
+    </nav> <!--header-->
+
+
+
+    <div class="hero-section">
+        <div class="herophoto">
+            <div class="col-lg-5 d-flex flex-column justify-content-center transform">
+                <h1 style="font-size:60px;" class="row mar">Natural & Glowing Makeup Look</h1>
+                <div class="d-flex links mt-3">
+                    <a href="Shop.html" class="btn rounded-0 d-flex shopn justify-content-center align-items-center fs-6">
+                        Shop Now
+                    </a>
+                    <a href="#" style="text-decoration:none;color:black; margin-left:15px;display:block;padding-top:6px;">
+                        <span class="lborder">Learn More</span>
+
+                    </a>
+                </div>
+                <a href="#target"  class="herotarget"></a>
+            </div>
+        </div>
+
+    </div> <!--background-->
+
+
+
+    <div id="nback" class="position-relative">
+        <div class="container text-sm-center" style="padding-top:130px;">
+            <div class="row ">
+                <h1 class="col-md-6 text-md-end" style="font-size:48px;">The Best Cosmetics that a Woman Must Have</h1>
+            </div>
+            <div class="row">
+                <p class=" col-md-6 offset-md-6 text-secondary text-md-start" style="font-size:15px;line-height:25px;">Peace is the beauty of life. It is sunshine. It is the smile of a child, the love of a mother, the joy of a father, the togetherness of a family. It is the advancement of man, the victory of a just cause, the triumph of truth.</p>
+            </div>
+        </div>
+
+    </div> <!--underbg-->
+
+    <div class="container" style="padding:120px 20px;"id="target">
+        <div class="row" style="margin-top:80px;margin-bottom:80px;">
+            <div class="col-lg ms-5">
+                <div class="fcircle">
+
+                </div>
+
+                <div class=" prodone ">
+                    <img src="images/product1.png" class="chance"/>
+                </div>
+                <div class="scircle">
+
+                </div>
+            </div>
+            <div class="col-lg pb-5 pb-lg-0 order-first order-lg-last" style="padding-top:150px;">
+                <a href="#" class="awa hov">New Arrival Available</a>
+                <h1 class="hwa">Olive Body<br /> Lotion Creme</h1>
+                <p class="pwa">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum. Duis cursus, mi quis viverra ornare,eros dolor interdum nulla, ut commodo diam .
+                </p>
+                <a href="#" class="awan">READ MORE</a>
+            </div>
+
+
+        </div>
+
+    </div><!--withanimation1-->
+
+
+
+    <div class="container ps-3 ps-lg-0">
+        <div class="row">
+            <div class="col-lg">
+                <h4 class="mb-4">Best Seller</h4>
+                <div class="card w-100 cardsh">
+                    <div class="d-flex  imedia">
+                        <div class="col col-lg-4 px-0 d-inline-flex justify-content-center ">
+                            <img src="images/imgcard1.png" style="width:80px;height:120px" />
+                        </div>
+                        <div class=" col-sm-8 card-body d-flex flex-column iimedia py-1">
+                            <h5 class=" card-title mb-2"><a href="#" class="hovb" style="text-decoration:none;">Neck Massage Lotion</a></h5>
+                            <h4 class="card-text border-top mb-3 ">$ 135.00 USD</h4>
+
+                            <img src="images/stars.svg" style="width:110px;" />
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="card w-100 cardsh">
+                    <div class="d-flex  imedia">
+                        <div class="col col-lg-4 px-0 d-inline-flex justify-content-center ">
+
+                            <img src="images/imgcard2.png" style="width:80px;height:120px" />
+                        </div>
+                        <div class=" col-sm-8 card-body d-flex flex-column iimedia py-1">
+                            <h5 class=" card-title mb-2"><a href="#" class="hovb" style="text-decoration:none;">Hair Creme</a></h5>
+                            <h4 class="card-text border-top mb-3 "> $ 125.00 USD</h4>
+
+                            <img src="images/stars.svg" style="width:110px;" />
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-lg">
+                <h4 class="mb-4">Last Acts</h4>
+                <div class="card w-100 cardsh">
+                    <div class="d-flex  imedia">
+                        <div class="col col-lg-4 px-0 d-inline-flex justify-content-center ">
+
+
+                            <img src="images/imgcard3.png" style="width:80px;height:120px" />
+                        </div>
+                        <div class=" col-sm-8 card-body d-flex flex-column iimedia py-1">
+                            <h5 class=" card-title mb-2 awa"><a href="#" class="hovb" style="text-decoration:none;">Face Lotion</a></h5>
+                            <h4 class="card-text border-top mb-3 "> $ 175.00 USD</h4>
+
+                            <img src="images/stars.svg" style="width:110px;" />
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="card w-100 cardsh">
+                    <div class="d-flex  imedia">
+                        <div class="col col-lg-4 px-0 d-inline-flex justify-content-center ">
+
+
+                            <img src="images/imgcard4.png" style="width:80px;height:120px" />
+                        </div>
+                        <div class=" col-sm-8 card-body d-flex flex-column iimedia py-1">
+                            <h5 class=" card-title mb-2 awa"><a href="#" class="hovb" style="text-decoration:none;">Hands Care Creme</a></h5>
+                            <h4 class="card-text border-top mb-3 ">   $ 125.00 USD</h4>
+
+                            <img src="images/stars.svg" style="width:110px;" />
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-lg">
+                <h4 class="mb-4">Top Rated</h4>
+                <div class="card w-100 cardsh">
+                    <div class="d-flex  imedia">
+                        <div class="col col-lg-4 px-0 d-inline-flex justify-content-center ">
+
+
+                            <img src="images/imgcard5.png" style="width:80px;height:120px" />
+                        </div>
+                        <div class=" col-sm-8 card-body d-flex flex-column iimedia py-1">
+                            <h5 class=" card-title mb-2 awa"><a href="#" class="hovb" style="text-decoration:none;"> Hair Nutrition Balsam</a></h5>
+                            <h4 class="card-text border-top mb-3 ">$ 265.00 USD</h4>
+
+                            <img src="images/stars.svg" style="width:110px;" />
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="card w-100 cardsh">
+                    <div class="d-flex  imedia">
+                        <div class="col col-lg-4 px-0 d-inline-flex justify-content-center ">
+
+
+                            <img src="images/imgcard6.png" style="width:80px;height:120px" />
+                        </div>
+                        <div class=" col-sm-8 card-body d-flex flex-column iimedia py-1">
+                            <h5 class=" card-title mb-2 awa"><a href="#" class="hovb" style="text-decoration:none;"> Body Lotion</a></h5>
+                            <h4 class="card-text border-top mb-3 "> $ 235.00 USD</h4>
+
+                            <img src="images/stars.svg" style="width:110px;" />
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div> <!--2 cardsrow-->
+
+    <div class="bg-white border-top border-bottom" style="margin-top:100px;">
+        <div class="container" style="padding:120px 20px;">
+            <div class="row" style="margin-top:80px;margin-bottom:80px;">
+                <div class=" col-lg " style="padding: 150px 100px 50px;">
+                    <div class="text-end"><a href="#" class="awa hov">Hight Cosmetics Products</a></div>
+                    <h1 class="hwa text-end">Modern Make-Up <br />Set of Tools</h1>
+                    <p class="pwa text-end">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum. Duis cursus, mi quis viverra ornare,eros dolor interdum nulla, ut commodo diam .
+                    </p>
+                    <div class="text-end"> <a href="#" class="awan ">READ MORE</a></div>
+                </div>
+                <div class="col-lg ms-5">
+                    <div class="fcircle">
+
+                    </div>
+
+                    <div class="prodone">
+
+                        <img src="images/product2.png" class="chance" />
+                    </div>
+                    <div class="scircle">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row px-5 mx-0" style="padding-bottom:100px;">
+            <div class="col-12 col-lg-3 px-4 pb-5 pb-lg-0">
+                <h4>Categories</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">New Arrivals</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Nail Polish</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Skin Care</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Our Accessories</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Lip-sticks</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Make-Up Tools</a></li>
+                </ul>
+
+
+            </div>
+            <div class="col-12 col-lg-3 px-4 pb-5 pb-lg-0">
+                <h4>Collections</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Best Seller</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Last Acts</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Top Rated</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Related Products</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Hot Products</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none sec">Sales Off</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-6 px-4 pb-5 pb-lg-0">
+                <h1 class="pb-4">Style Is A Reflection Of Your Attitude And Your Personality</h1>
+                <p class="text-secondary fs-6">The more often we see the things around us - even the beautiful and wonderful things - the more they become invisible to us. That is why we often take for granted the beauty of this world: the flowers, the trees, the birds, the clouds - even those we love. Because we see things so often, we see them less and less. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+    </div> <!--withanimation2-->
+    <div style="padding:120px 20px;">
+        <div>
+            <h1 class="best">Best Selling Products</h1>
+            <p class="beut" style=" padding-bottom: 60px;">- Beauty is when you can appreciate yourself. -</p>
+        </div>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-lg-3 g-4">
+                <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                    <a href="#">
+                        <div class="p-3">
+                            <img src="images/simgcard1.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                        </div>
+                    </a>
+                    <div class="text-center pt-3">
+                        <a href="#" class="text-decoration-none  d-block hovb" style="margin-bottom:15px;">Neck Massage Lotion</a>
+
+                        <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                            <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                                New Arrivals
+                            </a>
+                            <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                                $ 135.00 USD
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                    <a href="#">
+                        <div class="p-3">
+
+                            <img src="images/imgcard2.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                        </div>
+                    </a>
+                    <div class="text-center pt-3">
+                        <a href="#" class="text-decoration-none hovb d-block" style="margin-bottom:15px;">Hair Creme</a>
+
+                        <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                            <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                                Skin Care
+                            </a>
+                            <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                                $ 125.00 USD
+                            </p>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+                <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                    <a href="#">
+                        <div class="p-3">
+                            <img src="images/imgcard4.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+                        </div>
+                    </a>
+                    <div class="text-center pt-3">
+                        <a href="#" class="text-decoration-none hovb d-block" style="margin-bottom:15px;"> Hands Care Creme</a>
+
+                        <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                            <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                                Skin Care
+                            </a>
+                            <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                                $ 125.00 USD
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                    <a href="#">
+                        <div class="p-3">
+
+                            <img src="images/p4.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                        </div>
+                    </a>
+                    <div class="text-center pt-3">
+                        <a href="#" class="text-decoration-none hovb d-block" style="margin-bottom:15px;">Lime Body Wash</a>
+
+                        <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                            <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                                Make-Up Tools
+                            </a>
+                            <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                                $ 365.00 USD
+                            </p>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+                <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                    <a href="#">
+                        <div class="p-3">
+
+                            <img src="images/imgcard6.png" style="background-color: #fafafa;height:450px;" class="w-100" />
+
+                        </div>
+                    </a>
+                    <div class="text-center pt-3">
+                        <a href="#" class="text-decoration-none hovb d-block" style="margin-bottom:15px;">Body Lotion</a>
+
+                        <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                            <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                                New Arrivals
+                            </a>
+                            <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                                $ 235.00 USD
+                            </p>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                <div class=" colmange col-6 col-lg-4 bg-white px-0" style="box-shadow: 0 1px 3px 0 rgb(82 91 115 / 12%);">
+                    <a href="#">
+                        <div class="p-3">
+                            <img src="images/p6.png" style="background-color: #fafafa;height:450px;" class="w-100"/>
+                            
+                        </div>
+                    </a>
+                    <div class="text-center pt-3">
+                        <a href="#" class="text-decoration-none hovb d-block" style="margin-bottom:15px;">Clear Makeup Creme</a>
+
+                        <div class="d-flex divabc justify-content-center align-items-center align-items-stretch">
+                            <a href="#" class="btn d-flex flex-column rounded-0 btnborderth text-decoration-none">
+                                Nail Polish
+                            </a>
+                            <p class=" d-flex flex-column rounded-0 btnborderf" style="padding-top:5px;">
+                                $ 95.00 USD
+                            </p>
+                        </div>
+
+                        
+                        
+                       
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div> <!--اللي ما زبطش-->
+  
+    <div class="bg-white border-top border-bottom" style="margin:100px 0px;padding-bottom:130px;">
+        <div class="container" style="padding:120px 20px;">
+            <div class="row" style="margin-top:80px;margin-bottom:80px;">
+                <div class="col-lg ms-5 ms-lg-0">
+                    <div class="fcircle">
+
+                    </div>
+
+                    <div class=" prodthree">
+
+                        <img src="images/product3.png" class="chance" />
+                    </div>
+                    <div class="scircle">
+
+                    </div>
+                </div>
+                <div class="col-lg order-first order-lg-2 pb-5 pb-lg-0 ps-5" style="padding-top:150px;">
+                    <a href="#" class="awa hov">New Arrival Available</a>
+                    <h1 class="hwa">Top Rated<br /> Collections</h1>
+                    <p class="pwa">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum. Duis cursus, mi quis viverra ornare,eros dolor interdum nulla, ut commodo diam .
+                    </p>
+                    <a href="#" class="awan">SHOP NOW</a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="row mx-5 px-4 gy-3">
+            <div class="col-lg card p-0 me-4" style=" box-shadow: 0 15px 25px 0 rgb(82 91 115 / 8%);">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center" style="padding:35px 0px 20px 0px;"><h4 class="fs-5">RETURNE POLICY</h4></li>
+                    <li class="list-group-item text-center" style="padding: 20px 0px 35px 0px; color: #d84811; ">100% money back guarantee</li>
+                </ul>
+
+            </div>
+
+
+
+
+            <div class="col-lg card p-0 me-4" style="box-shadow: 0 15px 25px 0 rgb(82 91 115 / 8%);">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center" style="padding:35px 0px 20px 0px;"><h4 class="fs-5">FREE SHIPPING</h4></li>
+                    <li class="list-group-item text-center" style="padding: 20px 0px 35px 0px; color: #d84811; ">free shipping ovrer 99$</li>
+                </ul>
+
+            </div>
+            <div class="col-lg card p-0" style="box-shadow: 0 15px 25px 0 rgb(82 91 115 / 8%);">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center" style="padding:35px 0px 20px 0px;"><h4 class="fs-5">SUPPORT</h4></li>
+                    <li class="list-group-item text-center" style="padding: 20px 0px 35px 0px; color: #d84811; ">support all day 24/7</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+    </div> <!--withanimation3-->
+
+    <div>
+        <div class="container" style="padding:120px 20px;">
+            <div class="row" style="margin-top:60px;margin-bottom:80px;">
+                <div class="col col-lg " style="padding: 200px 100px 50px 0px;">
+                    <div class="text-end"><h3 class="awa">Hight Cosmetics Products</h3></div>
+                    <h1 class="hwa text-end"> Last Acts <br />‍Collections</h1>
+                    <p class="pwa text-end">
+                        Peace is the beauty of life. It is sunshine. It is the smile of a child, the love of a mother, the joy of a father, the togetherness of a family. It is the advancement of man, the victory of a just cause, the triumph of truth.
+                    </p>
+                    <div class="text-end"> <a href="#" class="awan ">SHOP NOW</a></div>
+                </div>
+                <div class="col-lg ms-5">
+                    <div class="fcircle">
+
+                    </div>
+
+                    <div class=" prodthree">
+
+                        <img src="images/product4.png" class="chance" />
+                    </div>
+                    <div class="scircle">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center">
+            <p style="font-size:20px;margin-bottom:60px;">- Trusted by World’s Best Brands -</p>
+        </div>
+
+        <div class="row bg-white mx-5 rounded-3" style="box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%); max-width: 100%; margin-bottom: 120px;">
+            <a href="#" style="padding:40px;" class="col-md text-center bordera opacity-50 trans"> <img src="images/prand1.png" style="width:120px;height:30px;" /></a>
+            <a href="#" style="padding:40px;" class="col-md text-center bordera opacity-50 trans"> <img src="images/prand2.png" style="width:120px;height:40px;" /></a>
+            <a href="#" style="padding:40px;" class="col-md text-center bordera opacity-50 trans"> <img src="images/prand3.png" style="width:120px;height:30px;" /></a>
+            <a href="#" style="padding:40px;" class="col-md text-center bordera opacity-50 trans"> <img src="images/prand4.png" style="width:120px;height:30px;" /></a>
+            <a href="#" style="padding:40px;" class="col-md text-center opacity-50 trans"> <img src="images/prand5.png" style="width:120px;height:30px;" /></a>
+
+        </div>
+
+
+    </div> <!--withanimation4-->
+
+
+    <div id="carouseldiv" class=" carousel slide position-relative d-inline-block bg-white p-5" style="vertical-align: top; width: 100%; height: 100%; white-space: normal; text-align: left;" data-bs-touch="false" data-bs-interval="false">
+
+        <div class="carousel-inner p-5 d-flex mx-auto mb-2 flex-column justify-content-center align-items-center">
+
+            <div class="carousel-item active me-0">
+                <div class=" carouselimg"></div>
+                <div class="carouselbody mx-auto mt-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                <div class="d-block text-center mt-3">
+                    Tom Arnold<span class="carospan"> -Makeup Artist</span>
+                </div>
+
+            </div>
+            <div class="carousel-item me-0">
+                <div class=" carouselimgt"></div>
+                <div class="carouselbody mx-auto mt-5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                <div class="d-block text-center mt-3">
+                    Eduardo Eguerra<span class="carospan"> -Hair Artist</span>
+                </div>
+
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouseldiv" data-bs-slide="prev">
+            <span aria-hidden="true">
+                <img src="images/tarcarousel.png" style="width:20px;height:20px;" />
+            </span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouseldiv" data-bs-slide="next">
+            <span aria-hidden="true"><img src="images/tarcarousel2.png" style="width:20px;height:20px;" /></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+
+    </div><!--carousel-->
+
+    <div class="pt-5">
+        <h1 style="padding-top:30px;" class="best">Our Blog Posts</h1>
+        <p class="beut">- Loneliness adds beauty to life. -</p>
+    </div>
+
+    <div class="row m-5 gy-5">
+        <div class="col-lg-4 col-md-6 col-sm-12 ">
+            <div class="card rounded-0">
+                <a href="#"><img src="images/col1.jpg" class="card-img-top rounded-0" /></a>
+                <div class="card-body p-0">
+                    <h5 class="card-title px-4 pb-2 pt-4"><a href="#" style="text-decoration:none;color:black;">Lip Liner Pencil for a touch-up!</a></h5>
+                    <p class="card-text px-4 pb-2 pt-0">
+                        It is not the beauty of a building you should look at; its the construction of the foundation that will stand the test of time.
+                    </p>
+
+
+                    <div class="d-flex divab justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborder text-decoration-none"style="padding:15px 40px;">
+                            October 27, 2018
+                        </a>
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnbordert text-decoration-none"style="padding:15px 40px;">
+                            Read More
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card rounded-0">
+                <a href="#"><img src="images/col2.jpg" class="card-img-top rounded-0" /></a>
+                <div class="card-body p-0">
+                    <h5 class="card-title px-4 pb-2 pt-4"><a href="#" style="text-decoration:none;color:black;">Nail Polish makes you ravishing!</a></h5>
+                    <p class="card-text px-4 pb-2 pt-0">
+                        It is not the beauty of a building you should look at; its the construction of the foundation that will stand the test of time.
+                    </p>
+
+                    <div class="d-flex divab justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborder text-decoration-none" style="padding:15px 40px;">
+                            October 27, 2018
+                        </a>
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnbordert text-decoration-none" style="padding:15px 40px;">
+                            Read More
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card rounded-0">
+                <a href="#"><img src="images/col3.jpg" class="card-img-top rounded-0" /></a>
+                <div class="card-body p-0">
+                    <h5 class="card-title px-4 pb-2 pt-4">
+                        <a href="#" style="text-decoration:none;color:black;">Sensitive Skins need Patch Test</a>
+                    </h5>
+                    <p class="card-text px-4 pb-2 pt-0">
+                        It is not the beauty of a building you should look at; its the construction of the foundation that will stand the test of time.
+                    </p>
+
+                    <div class="d-flex divab justify-content-center align-items-center align-items-stretch">
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnborder text-decoration-none" style="padding:15px 40px;">
+                            October 27, 2018
+                        </a>
+                        <a href="#" class="btn d-flex flex-column rounded-0 btnbordert text-decoration-none" style="padding:15px 40px;">
+                            Read More
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div> <!--first cards-->
+
+    <div class="text-center py-5">
+        <button type="button" class="btn rounded-0 shopn"style="padding:10px 40px!important;font-size:10px;width:190px!important;line-height:24px;letter-spacing:1px;">VIEW ALL POSTS</button>
+    </div>
+
+
+    <div class="d-md-flex justify-content-center align-items-center mt-5">
+        <a href="#" class="col-md "id="letsget">
+            <div class="text-center">
+                <div class="lgdiv">  OUR PHILOSOPHY</div>
+                <h2 class="lgh"> Lets Get In Touch!</h2>
+                <p class="lgp hhh">  LEARN MORE</p>
+            </div>
+        </a>
+        <a href="#" class="col-md" id="learnmore">
+            <div class="text-center">
+                <div class="lgdiv">WHAT WE DO</div>
+                <h2 class="lgh"> Learn More</h2>
+                <p class="lgp">  LEARN MORE</p>
+            </div>
+        </a>
+    </div> <!--imagesabovethefooter-->
+
+
+    <footer class="container-fluid ">
+        <a href="index.html"> <h2 id="absolute">NERONE</h2></a>
+        <div class="row inb mb-3 w-50 mx-auto ">
+            <input type="text" class="form-control rounded-0 p-2 col-sm" placeholder="Enter Your Email Here" aria-label="Enter Your Email Here" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary col-sm rounded-0 p-2 lh-lg" type="button" id="button-addon2">SUBMIT NOW</button>
+        </div>
+
+        <nav class="navbar navbar-expand footnav">
+            <ul class="navbar nav mx-auto">
+                <li class="nav-item"><a href="#" class="nav-link mx-5">HOME</a></li>
+                <li class="nav-item"><a href="#" class="nav-link mx-5">PAGES</a></li>
+                <li class="nav-item"><a href="#" class="nav-link mx-5"> SHOP</a></li>
+                <li class="nav-item"><a href="#" class="nav-link mx-5">COLLECTION</a></li>
+                <li class="nav-item"><a href="#" class="nav-link mx-5">PLOG</a></li>
+                <li class="nav-item"><a href="#" class="nav-link mx-5">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <p style="color:rgb(144,128,161)" class="cul">Template design by<a href="#"> Dorian Hoxha</a> - <a href="#">Image License Info</a>&<a href="#">Style-Guide</a>, Powered by <a href="#">Webflow</a></p>
+        <div class="d-flex iconsize justify-content-center mt-5 pb-5">
+            <a href="#"> <i class='bx bxl-facebook' style='color:rgba(0,0,0,0.56)'></i></a>
+            <a href="#"> <i class='bx bxl-twitter' style='color:rgba(0,0,0,0.56)'></i></a>
+            <a href="#"> <i class='bx bxl-linkedin' style='color:rgba(0,0,0,0.56)'></i></a>
+            <a href="#"> <i class='bx bxl-google-plus' style='color:rgba(0,0,0,0.56);'></i></a>
+        </div>
+    </footer> <!--footer-->
+
+</body>
+</html>
